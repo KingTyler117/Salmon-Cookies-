@@ -69,6 +69,7 @@ Store.prototype.render = function() {
 function renderFooterRow(){
   var totalOfAllTotals = 0;
   var tableRow = document.createElement('tr');
+  tableRow.id = 'footer';
   var tableData = document.createElement('td');
   tableData.textContent = 'Hourly Total';
   tableRow.appendChild(tableData);
@@ -94,6 +95,25 @@ function renderFooterRow(){
   parentElement.appendChild(tableRow);
 
 }
+
+function handleFormSubmit(event) {
+  event.preventDefault();
+  var location = event.target.storename.value;
+  var minCustomersEachHour = parseInt(event.target.minCustomers.value);
+  var maxCustomerEachHour = parseInt(event.target.maxCustomers.value);
+  var avgCookieSoldPerCustomer = parseInt(event.target.averageCookie.value);
+   var newStore = new Store(location, minCustomersEachHour,maxCustomerEachHour,avgCookieSoldPerCustomer);
+  var footer = document.getElementById('footer');
+  footer.parentNode.removeChild(footer);
+  newStore.render();
+  renderFooterRow();
+
+}
+
+var form = document.getElementById('form');
+form.addEventListener('submit', handleFormSubmit);
+
+
 
 
 function getRandomNumber(min, max){
