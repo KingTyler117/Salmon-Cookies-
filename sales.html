@@ -3,13 +3,80 @@
   <head>
     <title>Pat's Salmon Cookies Home</title>
   </head>
+
+<style>
+  table,th,td
+  
+  {
+    border: 2px; solid red;
+  
+  }
+  
+  table
+  
+  {
+
+    border-collapse:collapse;
+    width: 40%
+  
+  }
+
+  td
+
+{
+  
+  height:60px;
+
+}
+
+tr
+ {
+   background-color:tomato;
+   color:white;
+ } 
+
+ th 
+{
+background-color: tomato;
+color: navy;
+
+}
+
+</style>
+
+
   <body>
     <header>
       <a href="sales.html">sales</a>
     </header>
     <main>
-        <div id="sales-data"></div>
-    </main>
+        <table >
+          <tbody id = "table"></tbody>
+        </table> 
+
+      </main>
+
+
+  <section id = "contact-form">
+    <h2>Even More Event Listeners on a Form</h2>
+    <form id = "form">
+      <fieldset>
+        <legend>New Store Form</legend>
+        <label>name:</label>
+        <input type = "text" name = "storename" placeholder = "" required = "" />
+        <label>Min Customers</label>
+        <input type = "number" name = "minCustomers" />
+        <label>Max Customers</label>
+        <input type = "number" name = "maxCustomers" />
+        <label>Average Cookie Per Sale Number</label>
+        <input type = "number" name = "averageCookie" />
+        
+
+        <button type = "submit" name = "submit-button">submit</button>
+        </fieldset>
+        </form>
+        </section>
+
     <footer>
 
         <script src="js/app.js"> </script>
